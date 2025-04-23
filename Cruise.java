@@ -22,10 +22,10 @@ public class Cruise {
 
         int roomNumber = 1;
         for (int i = 0; i < numberOfWindowRooms; i++) {
-            rooms[i] = new Room((roomNumber+1), "W", windowRoomCost);
+            rooms[i] = new Room(roomNumber++, "W", windowRoomCost);
         }
         for (int i = numberOfWindowRooms; i < totalRooms; i++) {
-            rooms[i] = new Room((roomNumber+1), "I", interiorRoomCost);
+            rooms[i] = new Room(roomNumber++, "I", interiorRoomCost);
         }
     }
 
@@ -37,6 +37,8 @@ public class Cruise {
                 rooms[i].setPassenger(copyp);
                 passengers[i] = copyp;
                 numberOfOccupiedRooms++;
+                System.out.println( p.getName() + " is sucsessfuly added.");
+                return;
             }
         }
         System.out.println("No available room for passenger: " + p.getName());
@@ -55,14 +57,13 @@ public class Cruise {
     public String toString(){
         System.out.println("Ship name: " + shipName);
         System.out.println("Total rooms: " + totalRooms + " Window rooms: " + numberOfWindowRooms + " Interior rooms: " + numberOfInteriorRooms);
-        for (int i = 0 ; 0 < totalRooms ; i++){
-            System.out.println("Room number: " + rooms[i].getRoomNumber() + " Room type: " + rooms[i].getRoomType() + " Occupation: " + rooms[i].getOccupied() + " Room Cost: " + rooms[i].getCost() + " Passenger: " + rooms[i].getPassenger());
+        for (int i = 0 ; i < totalRooms ; i++){
+            System.out.println("Room number: " + rooms[i].getRoomNumber() + " Room type: " + rooms[i].getRoomType() + " Occupation: " + rooms[i].getOccupied() + " Room Cost: " + rooms[i].getCost() + " Passenger: " + rooms[i].getPassenger().getName());
         }
         System.out.println("Total passengers: " + passengers.length);
-        for (int i = 0 ; 0 < passengers.length ; i++){
-            int tempNum = passengers[i].getRoomNumber();
-            Room temp = rooms[tempNum];
-            System.out.println("Name: " + passengers[i].getName() + " Address: " + passengers[i].getAddress() + " Age: " + passengers[i].getAge() + "Room number: " + temp.getRoomNumber() + "Room type: " + temp.getRoomType() + "Occupation: " + temp.getOccupied() + "Room cost: " + temp.getCost());
+        for (int i = 0 ; i < passengers.length ; i++){
+            Room temp = rooms[i];
+            System.out.println("Name: " + passengers[i].getName() + " Address: " + passengers[i].getAddress() + " Age: " + passengers[i].getAge() + " Room number: " + temp.getRoomNumber() + " Room type: " + temp.getRoomType() + " Occupation: " + temp.getOccupied() + " Room cost: " + temp.getCost());
         }
         return "";
     }

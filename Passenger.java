@@ -36,7 +36,7 @@ public class Passenger {
         this.roomNumber = roomNumber; }
 
     public String toString() {
-        return "Name: " + name + ", Address: " + address + ", Age: " + age + ", Room #: " + roomNumber;
+        return "Name: " + name + " Address: " + address + " Age: " + age + " Room Number: " + roomNumber;
     }
 
     public boolean equals(Passenger other) {

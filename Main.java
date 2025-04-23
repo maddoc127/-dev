@@ -14,9 +14,9 @@ public class Main {
     
             System.out.println(cruise);
     
-            Passenger found = cruise.findPassenger("Deniz Mirza");
-            if (found != null) {
-                System.out.println("Passenger found: " + found);
+            Passenger x = cruise.findPassenger("Deniz Mirza");
+            if (x != null) {
+                System.out.println("Passenger found: " + x);
             } else {
                 System.out.println("Passenger not found.");
             }
