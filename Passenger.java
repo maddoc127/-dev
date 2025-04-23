@@ -4,11 +4,11 @@ public class Passenger {
     private int age;
     private int roomNumber;
 
-    public Passenger(String name, String address, int age, int roomNumber) {
+    public Passenger(String name, String address, int age) {
         this.name = name;
         this.address = address;
         this.age = age;
-        this.roomNumber = roomNumber;
+        this.roomNumber = 0;
     }
 
     public Passenger(Passenger other) {

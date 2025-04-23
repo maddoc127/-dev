@@ -1,15 +1,24 @@
 public class Main {
         public static void main(String[] args) {
-            Passenger p1 = new Passenger("John Doe", "123 Ocean Ave", 30, 1);
-            System.out.println("After creation: " + p1);
+            Cruise cruise = new Cruise("SS. Neptune", 2, 1, 100, 200);
+
+            Passenger p1 = new Passenger("Deniz Mirza", "Ankara", 20);
+            Passenger p2 = new Passenger("Bruce Wayne", "Bat Cave", 40);
+            Passenger p3 = new Passenger("Peter Parker", "New York", 21);
+            Passenger p4 = new Passenger("Some Old Guy", "Somewhere near", 100);
     
-            p1.setAge(31);
-            System.out.println("After age update: " + p1);
+            cruise.addPassenger(p1);
+            cruise.addPassenger(p2);
+            cruise.addPassenger(p3);
+            cruise.addPassenger(p4);
     
-            Room r1 = new Room(1, "W", 150);
-            System.out.println("Room after creation: " + r1);
+            System.out.println(cruise);
     
-            r1.setPassenger(p1);
-            System.out.println("Room after assigning passenger: " + r1);
+            Passenger found = cruise.findPassenger("Deniz Mirza");
+            if (found != null) {
+                System.out.println("Passenger found: " + found);
+            } else {
+                System.out.println("Passenger not found.");
+            }
         }
     }
